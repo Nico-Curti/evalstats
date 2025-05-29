@@ -1,0 +1,57 @@
+[project]
+name = 'evalstats'
+version = '0.0.1'
+authors = [
+  { name='Nico Curti', email='nico.curti2@unibo.it' },
+]
+description = 'Extraction of the main statistics from a series of data'
+readme = 'README.md'
+requires-python = '>=3.5'
+license = {text = 'MIT'}
+keywords = [
+  'statistics',
+  'exercise',
+  'software-development',
+]
+maintainers = [
+  { name='Nico Curti', email='nico.curti2@unibo.it' },
+]
+classifiers = [
+  'Natural Language :: English',
+  'Operating System :: MacOS :: MacOS X',
+  'Operating System :: POSIX',
+  'Operating System :: POSIX :: Linux',
+  'Operating System :: Microsoft :: Windows',
+  'Programming Language :: Python',
+  'Programming Language :: Python :: 3',
+  'Programming Language :: Python :: 3.5',
+  'Programming Language :: Python :: 3.6',
+  'Programming Language :: Python :: 3.7',
+  'Programming Language :: Python :: 3.8',
+  'Programming Language :: Python :: 3.9',
+  'Programming Language :: Python :: 3.10',
+  'Programming Language :: Python :: 3.11',
+  'Programming Language :: Python :: Implementation :: CPython',
+  'Programming Language :: Python :: Implementation :: PyPy'
+]
+dependencies = [
+  'numpy',
+]
+
+[project.optional-dependencies]
+dev = [
+  'flake8',
+  'pytest',
+  'codecov',
+  'pytest-cov',
+]
+
+[project.urls]
+'Homepage' = 'https://github.com/Nico-Curti/evalstats'
+'Bug Tracker' = 'https://github.com/Nico-Curti/evalstats/issues'
+
+[build-system]
+requires = [
+  'setuptools>=42',
+]
+build-backend = 'setuptools.build_meta'

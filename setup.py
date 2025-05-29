@@ -15,7 +15,6 @@ REQUIRES_PYTHON = '>=3'
 URL = 'https://github.com/Nico-Curti/evalstats'
 DOWNLOAD_URL = URL
 
-
 setup(
   name=PACKAGE_NAME,
   version=PACKAGE_VERSION,
