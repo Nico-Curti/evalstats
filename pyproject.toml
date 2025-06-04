@@ -38,6 +38,9 @@ dependencies = [
   'numpy',
 ]
 
+[project.scripts]
+evalstats = "evalstats.__main__:main"
+
 [project.optional-dependencies]
 dev = [
   'flake8',
