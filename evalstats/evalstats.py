@@ -27,9 +27,8 @@ class EvalStats:
     # Validate input data
     self._data = np.asarray(data)
     
-    if self._data.ndim != 1:
-      # convert to a one-dimensional array
-      self._data = self._data.flatten()
+    # convert to a one-dimensional array
+    self._data = self._data.flatten()
 
     # set the number of workers
     if not isinstance(num_workers, int) or num_workers <= 0:
@@ -62,9 +61,29 @@ class EvalStats:
       raise AttributeError(f"'{self.__class__.__name__}' object has no attribute '{name}'")
     # check if the method exists in the class
     if name not in self.__dict__:
-      self.__dict__[name] = eval(f'compute_{name}')
+      # call the method to compute the statistic
+      self.__dict__[name] = eval(f'self.compute_{name}()')
     # return the value of the attribute
     return self.__dict__[name]
+  
+  def update_data(self, new_data : list):
+    '''
+    Update the data with new values.
+
+    Parameters
+    ----------
+    new_data : list
+      A list of new data points to update the existing data.
+    '''
+    # Convert new_data to a numpy array and flatten it
+    self._data = np.asarray(new_data).flatten()
+    # clear the cached statistics
+    self.__dict__ = {
+      k: v 
+      for k, v in self.__dict__.items() 
+      if k.startswith('_')
+    }
+    return self
 
   def compute_mean(self) -> float:
     '''
