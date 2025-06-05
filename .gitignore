@@ -175,3 +175,8 @@ cython_debug/
 
 __pycache__/*
 *.egg-info/
+
+# Sphinx build directory
+docs/build/
+docs/source/_static/
+docs/source/_templates/
